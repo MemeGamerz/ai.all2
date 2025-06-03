@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Pricing Plans - SynapseAI',
-  description: 'Choose the perfect SynapseAI plan for your needs, from startups to enterprise solutions.',
+  title: 'Pricing Plans - ai.all',
+  description: 'Choose the perfect ai.all plan for your needs, from startups to enterprise solutions.',
 };
 
 const pricingTiers = [
@@ -15,7 +15,7 @@ const pricingTiers = [
     icon: Zap,
     price: '$49',
     frequency: '/month',
-    description: 'For individuals and small teams getting started with AI.',
+    description: 'For individuals and small teams getting started with AI on the ai.all platform.',
     features: [
       'Access to Core AI Models',
       'Limited API Usage',
@@ -31,7 +31,7 @@ const pricingTiers = [
     icon: Rocket,
     price: '$199',
     frequency: '/month',
-    description: 'For growing businesses needing more power and features.',
+    description: 'For growing businesses needing more power and features from ai.all.',
     features: [
       'All Starter Features',
       'Increased API Usage Limits',
@@ -48,7 +48,7 @@ const pricingTiers = [
     icon: Building,
     price: 'Custom',
     frequency: '',
-    description: 'Tailored solutions for large organizations with specific needs.',
+    description: 'Tailored ai.all solutions for large organizations with specific needs.',
     features: [
       'All Pro Features',
       'Unlimited API Usage (Fair Use)',
@@ -66,69 +66,74 @@ const pricingTiers = [
 export default function PricingPage() {
   return (
     <div className="py-12 md:py-16">
-      <header className="text-center mb-12 md:mb-16">
+      <header className="text-center mb-12 md:mb-16 animate-slide-in-from-bottom">
         <Rocket className="h-12 w-12 text-primary mx-auto mb-4" />
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
           Flexible Pricing for Every Scale
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          Find the SynapseAI plan that perfectly aligns with your project's scope and ambition. All plans are designed for growth and innovation.
+          Find the ai.all plan that perfectly aligns with your project's scope and ambition. All plans are designed for growth and innovation.
         </p>
       </header>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {pricingTiers.map((tier) => {
+        {pricingTiers.map((tier, index) => {
           const TierIcon = tier.icon;
           return (
-            <Card 
-              key={tier.name} 
-              className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 ${tier.popular ? 'border-2 border-primary relative overflow-hidden' : 'border-border'}`}
+            <div 
+              key={tier.name}
+              className="animate-slide-in-from-bottom"
+              style={{ animationDelay: `${200 + index * 100}ms` }}
             >
-              {tier.popular && (
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 transform translate-x-1/4 -translate-y-1/4 rotate-45">
-                  Popular
-                </div>
-              )}
-              <CardHeader className="items-center text-center">
-                <div className={`p-3 rounded-full mb-4 ${tier.popular ? 'bg-primary/10' : 'bg-accent/10'}`}>
-                  <TierIcon className={`h-10 w-10 ${tier.popular ? 'text-primary' : 'text-accent'}`} />
-                </div>
-                <CardTitle className="font-headline text-2xl text-foreground">{tier.name}</CardTitle>
-                <CardDescription className="text-muted-foreground h-12">{tier.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="text-center mb-6">
-                  <span className="text-4xl font-bold text-foreground">{tier.price}</span>
-                  {tier.frequency && <span className="text-muted-foreground">{tier.frequency}</span>}
-                </div>
-                <ul className="space-y-3">
-                  {tier.features.map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
-                      <span className="text-sm text-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Link href={tier.ctaLink} passHref className="w-full">
-                  <Button 
-                    className={`w-full transition-transform hover:scale-105 ${tier.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-accent hover:bg-accent/90 text-accent-foreground'}`}
-                    variant={tier.popular ? 'default' : 'default'}
-                  >
-                    {tier.cta}
-                  </Button>
-                </Link>
-              </CardFooter>
-            </Card>
+              <Card 
+                className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 h-full ${tier.popular ? 'border-2 border-primary relative overflow-hidden hover:-translate-y-1' : 'border-border hover:-translate-y-1'}`}
+              >
+                {tier.popular && (
+                  <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 transform translate-x-1/4 -translate-y-1/4 rotate-45">
+                    Popular
+                  </div>
+                )}
+                <CardHeader className="items-center text-center">
+                  <div className={`p-3 rounded-full mb-4 ${tier.popular ? 'bg-primary/10' : 'bg-accent/10'}`}>
+                    <TierIcon className={`h-10 w-10 ${tier.popular ? 'text-primary' : 'text-accent'}`} />
+                  </div>
+                  <CardTitle className="font-headline text-2xl text-foreground">{tier.name}</CardTitle>
+                  <CardDescription className="text-muted-foreground h-12">{tier.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="text-center mb-6">
+                    <span className="text-4xl font-bold text-foreground">{tier.price}</span>
+                    {tier.frequency && <span className="text-muted-foreground">{tier.frequency}</span>}
+                  </div>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Link href={tier.ctaLink} passHref className="w-full">
+                    <Button 
+                      className={`w-full transition-transform hover:scale-105 ${tier.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-accent hover:bg-accent/90 text-accent-foreground'}`}
+                      variant={tier.popular ? 'default' : 'default'}
+                    >
+                      {tier.cta}
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </div>
           );
         })}
       </div>
 
-      <div className="mt-16 text-center p-8 bg-secondary/30 rounded-lg max-w-3xl mx-auto">
+      <div className="mt-16 text-center p-8 bg-secondary/30 rounded-lg max-w-3xl mx-auto animate-fade-in [animation-delay:400ms]">
         <h3 className="font-headline text-2xl font-semibold text-foreground mb-4">Not Sure Which Plan is Right?</h3>
         <p className="text-muted-foreground max-w-lg mx-auto mb-6">
-          Our team can help you assess your needs and recommend the best SynapseAI solution for your specific use case.
+          Our team can help you assess your needs and recommend the best ai.all solution for your specific use case.
         </p>
         <Link href="/contact" passHref>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">

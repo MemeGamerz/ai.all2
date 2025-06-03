@@ -93,21 +93,41 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        "fade-out": {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
         "slide-in-from-bottom": {
           from: { transform: "translateY(20px)", opacity: "0" },
           to: { transform: "translateY(0)", opacity: "1"},
+        },
+        "slide-out-to-bottom": {
+          from: { transform: "translateY(0)", opacity: "1" },
+          to: { transform: "translateY(20px)", opacity: "0"},
         },
         "slide-in-from-top": {
           from: { transform: "translateY(-20px)", opacity: "0" },
           to: { transform: "translateY(0)", opacity: "1"},
         },
+        "slide-out-to-top": {
+          from: { transform: "translateY(0)", opacity: "1" },
+          to: { transform: "translateY(-20px)", opacity: "0"},
+        },
         "slide-in-from-left": {
           from: { transform: "translateX(-20px)", opacity: "0" },
           to: { transform: "translateX(0)", opacity: "1"},
         },
+        "slide-out-to-left": {
+          from: { transform: "translateX(0)", opacity: "1" },
+          to: { transform: "translateX(-20px)", opacity: "0"},
+        },
         "slide-in-from-right": {
           from: { transform: "translateX(20px)", opacity: "0" },
           to: { transform: "translateX(0)", opacity: "1"},
+        },
+        "slide-out-to-right": {
+          from: { transform: "translateX(0)", opacity: "1" },
+          to: { transform: "translateX(20px)", opacity: "0"},
         },
         "subtle-beat": {
           '0%, 100%': { transform: 'scale(1)' },
@@ -115,14 +135,19 @@ export default {
         }
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        'accordion-down': 'accordion-down 0.2s ease-out forwards',
+        'accordion-up': 'accordion-up 0.2s ease-out forwards',
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         "fade-in": "fade-in 0.5s ease-out forwards",
+        "fade-out": "fade-out 0.3s ease-out forwards",
         "slide-in-from-bottom": "slide-in-from-bottom 0.5s ease-out forwards",
+        "slide-out-to-bottom": "slide-out-to-bottom 0.3s ease-out forwards",
         "slide-in-from-top": "slide-in-from-top 0.5s ease-out forwards",
+        "slide-out-to-top": "slide-out-to-top 0.3s ease-out forwards",
         "slide-in-from-left": "slide-in-from-left 0.5s ease-out forwards",
+        "slide-out-to-left": "slide-out-to-left 0.3s ease-out forwards",
         "slide-in-from-right": "slide-in-from-right 0.5s ease-out forwards",
+        "slide-out-to-right": "slide-out-to-right 0.3s ease-out forwards",
         "subtle-beat": "subtle-beat 1.5s ease-in-out 1s 1 forwards",
       },
     },

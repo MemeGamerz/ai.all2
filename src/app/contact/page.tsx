@@ -7,26 +7,26 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
 export const metadata = {
-  title: 'Contact Us - SynapseAI',
-  description: 'Get in touch with the SynapseAI team for inquiries, support, or partnership opportunities.',
+  title: 'Contact Us - ai.all',
+  description: 'Get in touch with the ai.all team for inquiries, support, or partnership opportunities.',
 };
 
 export default function ContactPage() {
   return (
     <div className="py-12 md:py-16">
-      <header className="text-center mb-12 md:mb-16">
+      <header className="text-center mb-12 md:mb-16 animate-slide-in-from-bottom">
         <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
           Get in Touch
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          We're here to answer your questions, discuss your projects, or explore partnership opportunities. Reach out to us!
+          We're here to answer your questions, discuss your projects, or explore partnership opportunities with ai.all. Reach out to us!
         </p>
       </header>
 
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 max-w-5xl mx-auto">
-        <div className="space-y-8">
-          <Card className="shadow-lg hover:shadow-primary/20 transition-shadow">
+        <div className="space-y-8 animate-slide-in-from-left [animation-delay:200ms]">
+          <Card className="shadow-lg hover:shadow-primary/20 transition-shadow duration-300 hover:-translate-y-1">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary">Contact Form</CardTitle>
             </CardHeader>
@@ -52,8 +52,8 @@ export default function ContactPage() {
           </Card>
         </div>
 
-        <div className="space-y-8">
-           <Card className="shadow-md hover:shadow-accent/20 transition-shadow">
+        <div className="space-y-8 animate-slide-in-from-right [animation-delay:400ms]">
+           <Card className="shadow-md hover:shadow-accent/20 transition-shadow duration-300 hover:-translate-y-1">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-accent">Our Information</CardTitle>
             </CardHeader>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                 <Mail className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground">Email Us</h3>
-                  <p className="text-muted-foreground">contact@synapseai.example.com</p>
-                  <p className="text-muted-foreground">support@synapseai.example.com</p>
+                  <p className="text-muted-foreground">contact@ai.all.example.com</p>
+                  <p className="text-muted-foreground">support@ai.all.example.com</p>
                 </div>
               </div>
               <Separator />

@@ -16,7 +16,6 @@ interface FeaturePageProps {
 }
 
 // Pre-defined benefits for specific features
-// This can be expanded or moved to a more structured configuration if needed
 const featureSpecificBenefits: Record<string, string[]> = {
   'natural-language-processing': [
     'Enhanced Customer Engagement: Automate responses, personalize interactions, and understand customer needs at scale.',
@@ -49,14 +48,14 @@ const featureSpecificBenefits: Record<string, string[]> = {
     'Personalized Content Delivery: Adapt content and recommendations based on the user\'s emotional state.',
   ],
    'unified-platform': [
-    'Simplified Development: Access diverse AI tools through a single, consistent API and interface.',
+    'Simplified Development: Access diverse AI tools through a single, consistent API and interface from ai.all.',
     'Synergistic AI Solutions: Combine multiple AI capabilities to solve complex problems in novel ways.',
-    'Scalable Infrastructure: Build and deploy AI applications that can grow with your business needs.',
+    'Scalable Infrastructure: Build and deploy AI applications that can grow with your business needs on the ai.all platform.',
   ]
 };
 
 const defaultBenefits = (featureTitle: string) => [
-  `Drive innovation with advanced ${featureTitle.toLowerCase()} capabilities.`,
+  `Drive innovation with advanced ${featureTitle.toLowerCase()} capabilities from ai.all.`,
   `Increase operational efficiency and reduce manual effort.`,
   `Gain a competitive edge through deeper insights and automation.`,
 ];
@@ -74,7 +73,7 @@ export async function generateMetadata({ params }: FeaturePageProps) {
     return { title: 'Feature Not Found' };
   }
   return {
-    title: `${feature.title} - SynapseAI Feature`,
+    title: `${feature.title} - ai.all Feature`,
     description: feature.description,
   };
 }
@@ -95,13 +94,13 @@ export default function FeaturePage({ params }: FeaturePageProps) {
 
   return (
     <div className="max-w-5xl mx-auto py-8 md:py-12 px-4">
-      <Link href="/features" className="inline-flex items-center text-sm text-primary hover:underline mb-8 group">
+      <Link href="/features" className="inline-flex items-center text-sm text-primary hover:underline mb-8 group animate-fade-in">
         <ArrowLeft className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
         Back to All Features
       </Link>
 
       <article>
-        <header className="mb-10">
+        <header className="mb-10 animate-slide-in-from-bottom">
           <div className="flex items-center space-x-4 mb-4">
             <div className="p-3 bg-primary/10 rounded-lg">
               <Icon className="h-10 w-10 text-primary" />
@@ -119,15 +118,15 @@ export default function FeaturePage({ params }: FeaturePageProps) {
         </header>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 animate-slide-in-from-left [animation-delay:200ms]">
             {feature.imagePath && (
-              <div className="mb-8 rounded-lg overflow-hidden shadow-lg aspect-video relative">
+              <div className="mb-8 rounded-lg overflow-hidden shadow-lg aspect-video relative group">
                 <Image
                   src={feature.imagePath}
                   alt={feature.title}
                   layout="fill"
                   objectFit="cover"
-                  className="transition-transform duration-500 hover:scale-105"
+                  className="transition-transform duration-500 group-hover:scale-105"
                   data-ai-hint={feature.dataAiHint || "technology concept"}
                 />
               </div>
@@ -149,9 +148,9 @@ export default function FeaturePage({ params }: FeaturePageProps) {
             </div>
           </div>
 
-          <aside className="md:col-span-1 space-y-8">
+          <aside className="md:col-span-1 space-y-8 animate-slide-in-from-right [animation-delay:400ms]">
             {feature.interactiveDemoPath && (
-              <Card className="bg-primary/5 border-primary/20 shadow-lg">
+              <Card className="bg-primary/5 border-primary/20 shadow-lg hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <h3 className="font-headline text-xl font-semibold mb-3 text-primary">Try it Out!</h3>
                   <p className="text-sm text-muted-foreground mb-4">
@@ -175,7 +174,7 @@ export default function FeaturePage({ params }: FeaturePageProps) {
                     const RelatedIcon = related.icon;
                     return (
                     <Link key={related.slug} href={`/features/${related.slug}`} className="block group">
-                      <Card className="hover:border-primary/50 transition-colors hover:shadow-md">
+                      <Card className="hover:border-primary/50 transition-colors hover:shadow-md duration-300 hover:-translate-y-1">
                         <CardContent className="p-4 flex items-center space-x-3">
                           <RelatedIcon className="h-6 w-6 text-primary/70 group-hover:text-primary transition-colors" />
                           <div>
@@ -194,10 +193,10 @@ export default function FeaturePage({ params }: FeaturePageProps) {
         
         <Separator className="my-12" />
 
-        <div className="text-center">
+        <div className="text-center animate-fade-in [animation-delay:600ms]">
             <h3 className="font-headline text-2xl font-semibold mb-4 text-foreground">Ready to integrate {feature.title}?</h3>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Learn how SynapseAI can elevate your business with our powerful {feature.title.toLowerCase()} capabilities. Our experts are ready to help.
+              Learn how ai.all can elevate your business with our powerful {feature.title.toLowerCase()} capabilities. Our experts are ready to help.
             </p>
             <Link href="/contact" passHref>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform hover:scale-105">

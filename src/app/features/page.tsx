@@ -7,8 +7,8 @@ import { ArrowRight, LayoutGrid } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
-  title: 'AI Features - SynapseAI',
-  description: 'Explore the diverse range of AI capabilities offered by the SynapseAI platform.',
+  title: 'AI Features - ai.all',
+  description: 'Explore the diverse range of AI capabilities offered by the ai.all platform.',
 };
 
 const FeatureGridCard = ({ feature }: { feature: FeatureConfig }) => {
@@ -44,22 +44,28 @@ export default function FeaturesListPage() {
 
   return (
     <div className="py-8 md:py-12">
-      <header className="text-center mb-12 md:mb-16">
+      <header className="text-center mb-12 md:mb-16 animate-slide-in-from-bottom">
         <LayoutGrid className="h-12 w-12 text-primary mx-auto mb-4" />
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
-          Explore SynapseAI Features
+          Explore ai.all Features
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          Dive deep into the specifics of each cutting-edge AI capability seamlessly integrated into the SynapseAI unified platform. Understand how these technologies can empower your business.
+          Dive deep into the specifics of each cutting-edge AI capability seamlessly integrated into the ai.all unified platform. Understand how these technologies can empower your business.
         </p>
       </header>
 
       {platformCaps.length > 0 && (
         <section className="mb-12 md:mb-16">
-          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left">Platform Capabilities</h2>
+          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left animate-fade-in [animation-delay:100ms]">Platform Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {platformCaps.map((feature) => (
-              <FeatureGridCard key={feature.slug} feature={feature} />
+            {platformCaps.map((feature, index) => (
+              <div 
+                key={feature.slug}
+                className="animate-slide-in-from-bottom"
+                style={{ animationDelay: `${200 + index * 100}ms` }}
+              >
+                <FeatureGridCard feature={feature} />
+              </div>
             ))}
           </div>
         </section>
@@ -67,10 +73,16 @@ export default function FeaturesListPage() {
 
       {coreTech.length > 0 && (
          <section>
-          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left">Core AI Technologies</h2>
+          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left animate-fade-in [animation-delay:300ms]">Core AI Technologies</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {coreTech.map((feature) => (
-              <FeatureGridCard key={feature.slug} feature={feature} />
+            {coreTech.map((feature, index) => (
+              <div 
+                key={feature.slug}
+                className="animate-slide-in-from-bottom"
+                style={{ animationDelay: `${400 + index * 100}ms` }}
+              >
+                <FeatureGridCard feature={feature} />
+              </div>
             ))}
           </div>
         </section>

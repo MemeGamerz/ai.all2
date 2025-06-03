@@ -5,10 +5,10 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'SynapseAI - Converged AI Platform',
-  description: 'Showcasing a unified platform integrating various Artificial Intelligence technologies.',
+  title: 'ai.all - Converged AI Platform',
+  description: 'Showcasing a unified platform integrating various Artificial Intelligence technologies by ai.all.',
   icons: {
-    icon: '/logo.svg', // Assuming a logo.svg will be added later
+    icon: '/logo.svg',
   }
 };
 

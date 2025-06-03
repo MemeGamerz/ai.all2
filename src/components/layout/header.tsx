@@ -37,11 +37,11 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 animate-fade-in">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Logo className="h-8 w-8 text-primary" />
-          <span className="font-headline text-xl font-bold text-foreground">SynapseAI</span>
+          <span className="font-headline text-xl font-bold text-foreground">ai.all</span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
@@ -70,7 +70,7 @@ export function Header() {
               <div className="flex flex-col space-y-6 p-6">
                 <Link href="/" className="flex items-center gap-2 mb-4">
                    <Logo className="h-8 w-8 text-primary" />
-                   <span className="font-headline text-xl font-bold text-foreground">SynapseAI</span>
+                   <span className="font-headline text-xl font-bold text-foreground">ai.all</span>
                 </Link>
                 <nav className="flex flex-col space-y-4">
                   <NavLinks mobile />
