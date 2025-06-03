@@ -7,10 +7,7 @@ import Link from 'next/link';
 import { AppearOnScroll } from '@/components/shared/AppearOnScroll';
 
 
-export const metadata = {
-  title: 'Industry Applications - ai.all',
-  description: 'Discover how ai.all is applied across various industries to drive innovation and solve real-world problems.',
-};
+// Removed metadata export
 
 export default function ApplicationsPage() {
   return (
