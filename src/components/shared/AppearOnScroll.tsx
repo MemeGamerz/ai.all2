@@ -35,7 +35,10 @@ export function AppearOnScroll({
       ref={ref}
       className={cn(
         className,
-        !isVisible && initialOpacity ? 'opacity-0' : 'opacity-100 transition-opacity duration-500 ease-in-out',
+        // If not visible and initialOpacity is true, set opacity to 0.
+        // The animationClassName itself is expected to handle the transition to opacity 1.
+        !isVisible && initialOpacity ? 'opacity-0' : '',
+        // Apply the main animation class and its delay only when the element is visible.
         isVisible ? animationClassName : '',
         isVisible ? delay : ''
       )}
