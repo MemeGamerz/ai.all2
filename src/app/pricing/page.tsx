@@ -6,10 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link';
 import { AppearOnScroll } from '@/components/shared/AppearOnScroll';
 
-export const metadata = {
-  title: 'Pricing Plans - ai.all',
-  description: 'Choose the perfect ai.all plan for your needs, from startups to enterprise solutions.',
-};
+// Removed metadata export
 
 const pricingTiers = [
   {
