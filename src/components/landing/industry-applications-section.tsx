@@ -4,6 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Leaf, Landmark, Stethoscope, School, AlertTriangle, Loader2, Sparkles } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import React from 'react'; // Ensure React is imported for Suspense
 
 interface Industry {
   name: string;
@@ -53,17 +54,22 @@ export async function IndustryApplicationsSection() {
     <section className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold text-foreground mb-4 animate-fade-in">
             Transforming Industries with <span className="text-primary">SynapseAI</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in [animation-delay:100ms]">
             Discover real-world examples of how SynapseAI is driving innovation and efficiency across diverse sectors.
           </p>
         </div>
         
         <Accordion type="single" collapsible className="w-full space-y-4">
           {industries.map((industry, index) => (
-            <AccordionItem value={`item-${index}`} key={industry.name} className="bg-card border border-border/70 rounded-lg shadow-sm transition-shadow hover:shadow-md">
+            <AccordionItem 
+              value={`item-${index}`} 
+              key={industry.name} 
+              className="bg-card border border-border/70 rounded-lg shadow-sm transition-shadow hover:shadow-md animate-slide-in-from-bottom"
+              style={{ animationDelay: `${200 + index * 100}ms` }}
+            >
               <AccordionTrigger className="p-6 text-left hover:no-underline">
                 <div className="flex items-center space-x-4">
                   <industry.icon className={`w-8 h-8 ${industry.themeColor}`} />
@@ -88,6 +94,3 @@ export async function IndustryApplicationsSection() {
     </section>
   );
 }
-
-// Add React import for Suspense
-import React from 'react';

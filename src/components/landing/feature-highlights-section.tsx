@@ -15,7 +15,7 @@ export function FeatureHighlightsSection() {
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 animate-slide-in-from-left [animation-delay:0.2s]">
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Key Capability</span>
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
               {unifiedPlatformFeature.title}
@@ -43,7 +43,7 @@ export function FeatureHighlightsSection() {
               </Button>
             </Link>
           </div>
-          <div className="order-1 md:order-2 group">
+          <div className="order-1 md:order-2 group animate-slide-in-from-right [animation-delay:0.4s]">
             <div className="relative">
               <div className="absolute -inset-2 bg-gradient-to-br from-primary/30 to-accent/30 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse animation-delay-500"></div>
               <Image

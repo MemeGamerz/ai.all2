@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function HeroSection() {
   return (
-    <section className="py-16 md:py-24 animate-fade-in">
+    <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 text-center">
         <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 animate-slide-in-from-bottom [animation-delay:0.2s]">
           The Future of AI, <span className="text-primary">Converged</span>.
@@ -15,7 +15,7 @@ export function HeroSection() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12 animate-slide-in-from-bottom [animation-delay:0.6s]">
           <Link href="/features" passHref>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-transform hover:scale-105">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-transform hover:scale-105 animate-subtle-beat">
               Explore Features <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
