@@ -8,11 +8,6 @@ import { ArrowRight, LayoutGrid } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { AppearOnScroll } from '@/components/shared/AppearOnScroll';
 
-export const metadata = {
-  title: 'AI Features - ai.all',
-  description: 'Explore the diverse range of AI capabilities offered by the ai.all platform.',
-};
-
 const FeatureGridCard = ({ feature }: { feature: FeatureConfig }) => {
   const Icon = feature.icon;
   return (
