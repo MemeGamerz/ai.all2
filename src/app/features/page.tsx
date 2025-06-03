@@ -1,10 +1,12 @@
 
+'use client';
 import Link from 'next/link';
 import { features, FeatureConfig } from '@/config/features';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, LayoutGrid } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { AppearOnScroll } from '@/components/shared/AppearOnScroll';
 
 export const metadata = {
   title: 'AI Features - ai.all',
@@ -14,7 +16,7 @@ export const metadata = {
 const FeatureGridCard = ({ feature }: { feature: FeatureConfig }) => {
   const Icon = feature.icon;
   return (
-    <Card className="flex flex-col h-full overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+    <Card className="flex flex-col h-full overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-primary/30">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between mb-2">
           <div className="p-2.5 bg-primary/10 rounded-md">
@@ -44,28 +46,32 @@ export default function FeaturesListPage() {
 
   return (
     <div className="py-8 md:py-12">
-      <header className="text-center mb-12 md:mb-16 animate-slide-in-from-bottom">
-        <LayoutGrid className="h-12 w-12 text-primary mx-auto mb-4" />
-        <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
-          Explore ai.all Features
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          Dive deep into the specifics of each cutting-edge AI capability seamlessly integrated into the ai.all unified platform. Understand how these technologies can empower your business.
-        </p>
-      </header>
+      <AppearOnScroll animationClassName="animate-slide-in-from-bottom">
+        <header className="text-center mb-12 md:mb-16">
+          <LayoutGrid className="h-12 w-12 text-primary mx-auto mb-4" />
+          <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
+            Explore ai.all Features
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
+            Dive deep into the specifics of each cutting-edge AI capability seamlessly integrated into the ai.all unified platform. Understand how these technologies can empower your business.
+          </p>
+        </header>
+      </AppearOnScroll>
 
       {platformCaps.length > 0 && (
         <section className="mb-12 md:mb-16">
-          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left animate-fade-in [animation-delay:100ms]">Platform Capabilities</h2>
+           <AppearOnScroll animationClassName="animate-fade-in" delay="[animation-delay:100ms]">
+            <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left">Platform Capabilities</h2>
+          </AppearOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {platformCaps.map((feature, index) => (
-              <div 
+              <AppearOnScroll 
                 key={feature.slug}
-                className="animate-slide-in-from-bottom"
-                style={{ animationDelay: `${200 + index * 100}ms` }}
+                animationClassName="animate-slide-in-from-bottom"
+                delay={`[animation-delay:${200 + index * 100}ms]`}
               >
                 <FeatureGridCard feature={feature} />
-              </div>
+              </AppearOnScroll>
             ))}
           </div>
         </section>
@@ -73,16 +79,18 @@ export default function FeaturesListPage() {
 
       {coreTech.length > 0 && (
          <section>
-          <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left animate-fade-in [animation-delay:300ms]">Core AI Technologies</h2>
+          <AppearOnScroll animationClassName="animate-fade-in" delay="[animation-delay:300ms]">
+            <h2 className="font-headline text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center md:text-left">Core AI Technologies</h2>
+          </AppearOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {coreTech.map((feature, index) => (
-              <div 
+              <AppearOnScroll 
                 key={feature.slug}
-                className="animate-slide-in-from-bottom"
-                style={{ animationDelay: `${400 + index * 100}ms` }}
+                animationClassName="animate-slide-in-from-bottom"
+                delay={`[animation-delay:${400 + index * 100}ms]`}
               >
                 <FeatureGridCard feature={feature} />
-              </div>
+              </AppearOnScroll>
             ))}
           </div>
         </section>

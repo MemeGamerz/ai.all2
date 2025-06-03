@@ -1,5 +1,5 @@
 
-'use client'; // Made client component to use AppearOnScroll
+'use client'; 
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -37,7 +37,7 @@ export function HeroSection() {
           </div>
         </AppearOnScroll>
         <AppearOnScroll animationClassName="animate-slide-in-from-bottom" delay="[animation-delay:0.8s]" className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg animate-hero-blur-pulse"></div>
           <Image
             src="https://placehold.co/1200x600.png"
             alt="ai.all Platform Showcase"

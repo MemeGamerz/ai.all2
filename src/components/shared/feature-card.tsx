@@ -11,7 +11,7 @@ interface FeatureCardProps {
 export function FeatureCard({ feature }: FeatureCardProps) {
   const Icon = feature.icon;
   return (
-    <Card className="flex flex-col h-full transform hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1">
+    <Card className="flex flex-col h-full transform hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 border border-transparent hover:border-primary/30">
       <CardHeader className="flex flex-row items-start gap-4 space-y-0 pb-4">
         <div className="bg-accent/10 p-3 rounded-lg">
           <Icon className="w-8 h-8 text-accent" />

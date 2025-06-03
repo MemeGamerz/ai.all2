@@ -14,7 +14,7 @@ interface InteractiveDemoCardProps {
 
 export function InteractiveDemoCard({ title, description, thumbnailUrl, demoLink, dataAiHint }: InteractiveDemoCardProps) {
   return (
-    <Card className="overflow-hidden flex flex-col h-full transform hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1">
+    <Card className="overflow-hidden flex flex-col h-full transform hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 border border-transparent hover:border-accent/30">
       <CardHeader className="p-0 relative aspect-video">
         <Image 
             src={thumbnailUrl} 

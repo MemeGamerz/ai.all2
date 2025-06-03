@@ -132,6 +132,10 @@ export default {
         "subtle-beat": {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.03)' },
+        },
+        'hero-blur-pulse': {
+          '0%, 100%': { opacity: '0.5' , transform: 'scale(1)'},
+          '50%': { opacity: '0.65', transform: 'scale(1.01)' },
         }
       },
       animation: {
@@ -149,6 +153,7 @@ export default {
         "slide-in-from-right": "slide-in-from-right 0.5s ease-out forwards",
         "slide-out-to-right": "slide-out-to-right 0.3s ease-out forwards",
         "subtle-beat": "subtle-beat 1.5s ease-in-out 1s 1 forwards",
+        'hero-blur-pulse': 'hero-blur-pulse 5s ease-in-out infinite',
       },
     },
   },
