@@ -5,10 +5,7 @@ import { coreTechnologies } from "@/config/features";
 import { PlaySquare } from "lucide-react";
 import { AppearOnScroll } from "@/components/shared/AppearOnScroll";
 
-export const metadata = {
-  title: 'Interactive Demos - ai.all',
-  description: 'Experience the power of ai.all through interactive demonstrations of our core AI technologies.',
-};
+// Removed metadata export
 
 export default function DemosPage() {
   return (
