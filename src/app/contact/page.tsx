@@ -8,10 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { AppearOnScroll } from '@/components/shared/AppearOnScroll';
 
-export const metadata = {
-  title: 'Contact Us - ai.all',
-  description: 'Get in touch with the ai.all team for inquiries, support, or partnership opportunities.',
-};
+// Removed metadata export
 
 export default function ContactPage() {
   return (
