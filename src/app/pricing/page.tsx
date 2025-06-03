@@ -1,0 +1,141 @@
+
+import { CheckCircle, Zap, Rocket, Building } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'Pricing Plans - SynapseAI',
+  description: 'Choose the perfect SynapseAI plan for your needs, from startups to enterprise solutions.',
+};
+
+const pricingTiers = [
+  {
+    name: 'Starter',
+    icon: Zap,
+    price: '$49',
+    frequency: '/month',
+    description: 'For individuals and small teams getting started with AI.',
+    features: [
+      'Access to Core AI Models',
+      'Limited API Usage',
+      'Basic Analytics Dashboard',
+      'Community Support',
+    ],
+    cta: 'Get Started Free',
+    ctaLink: '/contact?plan=starter',
+    popular: false,
+  },
+  {
+    name: 'Pro',
+    icon: Rocket,
+    price: '$199',
+    frequency: '/month',
+    description: 'For growing businesses needing more power and features.',
+    features: [
+      'All Starter Features',
+      'Increased API Usage Limits',
+      'Advanced Analytics & Reporting',
+      'Priority Email Support',
+      'Early Access to New Features',
+    ],
+    cta: 'Choose Pro',
+    ctaLink: '/contact?plan=pro',
+    popular: true,
+  },
+  {
+    name: 'Enterprise',
+    icon: Building,
+    price: 'Custom',
+    frequency: '',
+    description: 'Tailored solutions for large organizations with specific needs.',
+    features: [
+      'All Pro Features',
+      'Unlimited API Usage (Fair Use)',
+      'Custom Model Training',
+      'Dedicated Account Manager',
+      '24/7 Premium Support & SLA',
+      'On-premise Deployment Option',
+    ],
+    cta: 'Contact Sales',
+    ctaLink: '/contact?plan=enterprise',
+    popular: false,
+  },
+];
+
+export default function PricingPage() {
+  return (
+    <div className="py-12 md:py-16">
+      <header className="text-center mb-12 md:mb-16">
+        <Rocket className="h-12 w-12 text-primary mx-auto mb-4" />
+        <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
+          Flexible Pricing for Every Scale
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
+          Find the SynapseAI plan that perfectly aligns with your project's scope and ambition. All plans are designed for growth and innovation.
+        </p>
+      </header>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {pricingTiers.map((tier) => {
+          const TierIcon = tier.icon;
+          return (
+            <Card 
+              key={tier.name} 
+              className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 ${tier.popular ? 'border-2 border-primary relative overflow-hidden' : 'border-border'}`}
+            >
+              {tier.popular && (
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 transform translate-x-1/4 -translate-y-1/4 rotate-45">
+                  Popular
+                </div>
+              )}
+              <CardHeader className="items-center text-center">
+                <div className={`p-3 rounded-full mb-4 ${tier.popular ? 'bg-primary/10' : 'bg-accent/10'}`}>
+                  <TierIcon className={`h-10 w-10 ${tier.popular ? 'text-primary' : 'text-accent'}`} />
+                </div>
+                <CardTitle className="font-headline text-2xl text-foreground">{tier.name}</CardTitle>
+                <CardDescription className="text-muted-foreground h-12">{tier.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-bold text-foreground">{tier.price}</span>
+                  {tier.frequency && <span className="text-muted-foreground">{tier.frequency}</span>}
+                </div>
+                <ul className="space-y-3">
+                  {tier.features.map((feature, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <span className="text-sm text-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Link href={tier.ctaLink} passHref className="w-full">
+                  <Button 
+                    className={`w-full transition-transform hover:scale-105 ${tier.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-accent hover:bg-accent/90 text-accent-foreground'}`}
+                    variant={tier.popular ? 'default' : 'default'}
+                  >
+                    {tier.cta}
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          );
+        })}
+      </div>
+
+      <div className="mt-16 text-center p-8 bg-secondary/30 rounded-lg max-w-3xl mx-auto">
+        <h3 className="font-headline text-2xl font-semibold text-foreground mb-4">Not Sure Which Plan is Right?</h3>
+        <p className="text-muted-foreground max-w-lg mx-auto mb-6">
+          Our team can help you assess your needs and recommend the best SynapseAI solution for your specific use case.
+        </p>
+        <Link href="/contact" passHref>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+            Talk to an Expert
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+}

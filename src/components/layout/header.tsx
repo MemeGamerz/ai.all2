@@ -1,9 +1,10 @@
+
 "use client";
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, BrainCircuit } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Logo } from '@/components/shared/logo';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -13,6 +14,7 @@ const navItems = [
   { label: 'Features', href: '/features' },
   { label: 'Demos', href: '/demos' },
   { label: 'Applications', href: '/applications' },
+  { label: 'Pricing', href: '/pricing' },
 ];
 
 export function Header() {
@@ -47,12 +49,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="hidden md:inline-flex">
-            Contact Sales
-          </Button>
-          <Button size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-            Get Started
-          </Button>
+          <Link href="/contact" passHref>
+            <Button variant="outline" size="sm" className="hidden md:inline-flex transition-transform hover:scale-105">
+              Contact Sales
+            </Button>
+          </Link>
+          <Link href="/features" passHref>
+            <Button size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+              Get Started
+            </Button>
+          </Link>
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -69,12 +75,16 @@ export function Header() {
                 <nav className="flex flex-col space-y-4">
                   <NavLinks mobile />
                 </nav>
-                 <Button variant="outline" className="w-full">
-                  Contact Sales
-                </Button>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Get Started
-                </Button>
+                <Link href="/contact" passHref className="w-full">
+                   <Button variant="outline" className="w-full">
+                    Contact Sales
+                  </Button>
+                </Link>
+                <Link href="/features" passHref className="w-full">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

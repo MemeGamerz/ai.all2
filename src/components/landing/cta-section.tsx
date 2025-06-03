@@ -1,6 +1,7 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChartBig, Zap } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -8,10 +9,10 @@ export function CTASection() {
       <div className="container mx-auto px-4 text-center">
         <Zap className="h-16 w-16 mx-auto mb-6 opacity-80 animate-fade-in" />
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-6 animate-fade-in [animation-delay:100ms]">
-          Ready to Revolutionize Your Business with AI?
+          Ready to Transform Your Enterprise with Converged AI?
         </h2>
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in [animation-delay:200ms]">
-          Unlock unparalleled insights and efficiency with SynapseAI. Our converged platform is designed to scale with your ambitions and integrate seamlessly into your workflows.
+          Unlock unprecedented operational insights, drive innovation, and achieve superior efficiency with SynapseAI. Our enterprise-grade, converged AI platform is engineered to scale with your ambitions and integrate fluidly into your existing workflows.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in [animation-delay:300ms]">
           <Link href="/contact" passHref>

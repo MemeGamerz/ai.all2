@@ -1,3 +1,4 @@
+
 import { InteractiveDemoCard } from "@/components/shared/interactive-demo-card";
 import { coreTechnologies } from "@/config/features";
 import { PlaySquare } from "lucide-react";
@@ -16,7 +17,7 @@ export default function DemosPage() {
           Interactive AI Demos
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          Get hands-on with SynapseAI. Explore the capabilities of our platform by trying out these interactive demos.
+          Get truly hands-on with the capabilities of SynapseAI. Explore the power and versatility of our platform by interacting directly with these live demonstrations of our core AI technologies.
         </p>
       </header>
 
@@ -27,7 +28,7 @@ export default function DemosPage() {
             title={`${feature.title} Demo`}
             description={`Explore interactive ${feature.title.toLowerCase()} capabilities. ${feature.description.split('.')[0]}.`}
             thumbnailUrl={feature.imagePath || `https://placehold.co/400x300.png?text=${feature.title.replace(" ", "+")}+Demo`}
-            demoLink={feature.interactiveDemoPath || `/demos/${feature.slug}`} // Fallback to a slug-based path
+            demoLink={feature.interactiveDemoPath || `/demos/${feature.slug}`}
             dataAiHint={feature.dataAiHint || "technology interface"}
           />
         ))}

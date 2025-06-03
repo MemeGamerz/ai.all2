@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, PlayCircle } from 'lucide-react';
@@ -11,7 +12,7 @@ export function HeroSection() {
           The Future of AI, <span className="text-primary">Converged</span>.
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-slide-in-from-bottom [animation-delay:0.4s]">
-          SynapseAI unifies cutting-edge AI technologies into a single, powerful platform. Explore seamless integration of NLP, image recognition, predictive analytics, and more.
+          SynapseAI seamlessly unifies cutting-edge AI technologies—NLP, image recognition, predictive analytics, and more—into a single, extraordinarily powerful, and developer-friendly platform.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12 animate-slide-in-from-bottom [animation-delay:0.6s]">
           <Link href="/features" passHref>

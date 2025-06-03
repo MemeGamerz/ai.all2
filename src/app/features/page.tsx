@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { features, FeatureConfig } from '@/config/features';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,7 +14,7 @@ export const metadata = {
 const FeatureGridCard = ({ feature }: { feature: FeatureConfig }) => {
   const Icon = feature.icon;
   return (
-    <Card className="flex flex-col h-full overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <Card className="flex flex-col h-full overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between mb-2">
           <div className="p-2.5 bg-primary/10 rounded-md">
@@ -28,7 +29,7 @@ const FeatureGridCard = ({ feature }: { feature: FeatureConfig }) => {
       </CardContent>
       <CardFooter>
         <Link href={`/features/${feature.slug}`} passHref className="w-full">
-          <Button variant="outline" className="w-full text-primary border-primary hover:bg-primary/10">
+          <Button variant="outline" className="w-full text-primary border-primary hover:bg-primary/10 transition-transform hover:scale-105">
             Learn More <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </Link>
@@ -49,7 +50,7 @@ export default function FeaturesListPage() {
           Explore SynapseAI Features
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          Dive into the specifics of each AI capability integrated into our unified platform.
+          Dive deep into the specifics of each cutting-edge AI capability seamlessly integrated into the SynapseAI unified platform. Understand how these technologies can empower your business.
         </p>
       </header>
 

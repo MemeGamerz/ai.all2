@@ -1,5 +1,8 @@
+
 import { IndustryApplicationsSection } from '@/components/landing/industry-applications-section';
 import { Briefcase } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Industry Applications - SynapseAI',
@@ -15,7 +18,7 @@ export default function ApplicationsPage() {
           AI in Action: Industry Applications
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4">
-          SynapseAI provides versatile solutions tailored for diverse sectors. See how our platform is making an impact.
+          SynapseAI delivers versatile and adaptive AI solutions meticulously tailored for diverse sectors. Explore how our converged platform is actively driving innovation, optimizing operations, and solving complex real-world challenges across industries.
         </p>
       </header>
       
@@ -25,13 +28,13 @@ export default function ApplicationsPage() {
       <div className="mt-16 text-center p-8 bg-secondary/30 rounded-lg">
         <h3 className="font-headline text-2xl font-semibold text-foreground mb-4">Custom Solutions for Your Industry</h3>
         <p className="text-muted-foreground max-w-lg mx-auto">
-          Don't see your industry? SynapseAI's flexible architecture can be adapted to meet unique challenges. Contact us to learn how we can help your business.
+          Don't see your specific industry listed? SynapseAI's inherently flexible and modular architecture can be rapidly adapted to address unique challenges and opportunities in any field. Contact our specialists to explore how we can co-create powerful, bespoke AI solutions for your business.
         </p>
-        <a href="/contact">
-          <button className="mt-6 px-6 py-3 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-colors">
+        <Link href="/contact" passHref>
+          <Button className="mt-6 px-6 py-3 bg-primary text-primary-foreground rounded-md font-semibold hover:bg-primary/90 transition-colors transition-transform hover:scale-105">
             Contact Us
-          </button>
-        </a>
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +7,7 @@ import Image from 'next/image';
 import { PlaySquare } from 'lucide-react';
 
 export function InteractiveDemosSection() {
-  const demoFeatures = coreTechnologies.slice(0, 3); // Show demos for first 3 core techs
+  const demoFeatures = coreTechnologies.slice(0, 3);
 
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -16,7 +17,7 @@ export function InteractiveDemosSection() {
             Experience AI in <span className="text-accent">Action</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in [animation-delay:100ms]">
-            Try our interactive demos to see the power of SynapseAI firsthand. Explore how our technologies perform in real-time.
+            Try our interactive demos to experience the true power and responsiveness of SynapseAI firsthand. Explore how our diverse AI technologies perform in real-time scenarios and envision their impact on your operations.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,8 +48,8 @@ export function InteractiveDemosSection() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Link href={feature.interactiveDemoPath || '#'} passHref className="w-full">
-                    <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent/10 hover:text-accent">
+                  <Link href={feature.interactiveDemoPath || `/demos/${feature.slug}`} passHref className="w-full">
+                    <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent/10 hover:text-accent transition-transform hover:scale-105">
                       Launch Demo
                     </Button>
                   </Link>
@@ -59,7 +60,7 @@ export function InteractiveDemosSection() {
         </div>
         <div className="text-center mt-12 animate-fade-in [animation-delay:500ms]">
           <Link href="/demos" passHref>
-            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">View All Demos</Button>
+            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform hover:scale-105">View All Demos</Button>
           </Link>
         </div>
       </div>

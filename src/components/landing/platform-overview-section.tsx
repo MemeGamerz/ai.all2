@@ -1,3 +1,4 @@
+
 import { coreTechnologies } from '@/config/features';
 import { FeatureCard } from '@/components/shared/feature-card';
 
@@ -10,7 +11,7 @@ export function PlatformOverviewSection() {
             One Platform, <span className="text-primary">Infinite Possibilities</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in [animation-delay:100ms]">
-            SynapseAI integrates a comprehensive suite of AI capabilities. Discover how our core technologies can empower your innovations.
+            SynapseAI integrates a comprehensive suite of advanced AI capabilities. Discover how our core technologies, working in synergy, can empower your most ambitious innovations and drive transformative results.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
